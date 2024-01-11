@@ -1,4 +1,3 @@
-import request
 import json
 
 import requests
@@ -11,7 +10,8 @@ def get_data(id=None):
     if id is not None:
         data = {'id': id}
     json_data = json.dumps(data)
-    r = requests.get(url=URL, data=json_data)
+    headers = {'content-Type': 'application/json'}
+    r = requests.get(url=URL, headers=headers, data=json_data)
     data = r.json()
     print(data)
 
@@ -27,7 +27,8 @@ def post_data():
         'city': 'islamabad'
     }
     json_data = json.dumps(data)
-    r = requests.post(url=URL, data=json_data)
+    headers = {'content-Type': 'application/json'}
+    r = requests.post(url=URL, headers=headers, data=json_data)
     data = r.json()
     print(data)
 
@@ -43,7 +44,8 @@ def update_data():
         'city': 'Lahore'
     }
     json_data = json.dumps(data)
-    r = requests.put(url=URL, data=json_data)
+    headers = {'content-Type': 'application/json'}
+    r = requests.put(url=URL, headers=headers, data=json_data)
     data = r.json()
     print(data)
 
@@ -54,8 +56,9 @@ def update_data():
 def delete_data():
     data = {'id': 4}
     json_data = json.dumps(data)
-    r = requests.delete(url=URL, data=json_data)
+    headers = {'content-Type': 'application/json'}
+    r = requests.delete(url=URL, headers=headers, data=json_data)
     data = r.json()
     print(data)
 
-# delete_data()
+delete_data()
