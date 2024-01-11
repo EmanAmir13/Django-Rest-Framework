@@ -1,1 +1,1 @@
-from .curdByMixins import *
+from .crudByConcrete import *
