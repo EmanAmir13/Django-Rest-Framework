@@ -25,8 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 EXTERNAL_APPS = [
-    'api.apps.ApiConfig',
     'rest_framework',
+    'rest_framework.authtoken',
+    'api.apps.ApiConfig',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS

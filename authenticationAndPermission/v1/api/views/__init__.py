@@ -1,1 +1,1 @@
-from .custom_auth import *
+from .token_auth import *
