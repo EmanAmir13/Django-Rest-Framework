@@ -1,1 +1,1 @@
-from .basic_auth import *
+from .session_auth import *
