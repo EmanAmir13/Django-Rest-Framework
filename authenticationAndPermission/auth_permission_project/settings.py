@@ -28,6 +28,7 @@ EXTERNAL_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api.apps.ApiConfig',
+    # 'django_filters',
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -112,10 +113,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '2/day',
-        'user': '5/hour'
-    }
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'anon': '2/day',
+    #     'user': '5/hour'
+    # }
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+
     #     'DEFAULT_AUTHENTICATION_CLASSES': [
     #         'rest_framework.authentication.BasicAuthentication'
     #     ],
